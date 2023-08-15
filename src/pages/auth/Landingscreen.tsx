@@ -9,6 +9,8 @@ import project from "../../assets/project.webp";
 import remove from "../../assets/removes.png";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import convo from "../../assets/convo.webp";
+import { Link } from "react-router-dom";
+import look from "../../assets/look.webp";
 
 const LandingScreen = () => {
   return (
@@ -64,7 +66,10 @@ const LandingScreen = () => {
                 </div>
                 <div className="font-medium mr[30px]">Security</div>
               </div>
-              <img className="w-[230px] h-[150px] bg-purple-500 rounded-[20px] object-cover" src={convo}></img>
+              <img
+                className="w-[230px] h-[150px] bg-purple-500 rounded-[20px] object-cover"
+                src={convo}
+              ></img>
             </div>
             <img
               className="w-[330px] h-[310px] object-cover"
@@ -72,7 +77,39 @@ const LandingScreen = () => {
             ></img>
           </div>
         </div>
-        <div className="w-full h-[375px]"></div>
+        <div className="w-full h-[375px] flex items-center justify-center">
+          <div className="w-[93%] h-[355px flex items-center justify-between">
+            <div className="w-[37%] h-[355px] rounded-[20px]">
+              <div className="text-4xl font-semibold mt-[10px]">
+                One app to <br /> replace them all.
+              </div>
+              <div className="text-[14px] font-medium mt-[15px]">
+                Explore our all in one solution for project management. This
+                will <br />
+                include features like communication, organization, analytics and
+                more.
+              </div>
+              <div className="mt-[18px]">
+                <Link
+                  to="/auth/signup"
+                  style={{
+                    padding: "5px 15px",
+                    borderRadius: "5px",
+                    border: "1px solid grey",
+                    backgroundColor: "gray",
+                    color: "white",
+                  }}
+                >
+                  Get Started
+                </Link>
+              </div>
+            </div>
+            <img
+              className="w-[55%] h-[355px] rounded-[25px] object-cover"
+              src={look}
+            />
+          </div>
+        </div>
       </div>
     </div>
     // </div>
