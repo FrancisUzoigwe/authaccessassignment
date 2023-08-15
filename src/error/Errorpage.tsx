@@ -130,9 +130,20 @@ const ErrorPage = () => {
             </g>
           </g>
         </svg>
-      <div className="absolute w-[100%] h-[50px]  flex items-center justify-center mt-[450px]">
-        <Link to="/screen/home" style={{fontWeight: "700", textDecoration: "none", padding: "5px 18px", border: "1px solid silver", borderRadius: "5px"}}>Back</Link>
-      </div>
+        <div className="absolute w-[100%] h-[50px]  flex items-center justify-center mt-[450px]">
+          <Link
+            to="/screen/home"
+            style={{
+              fontWeight: "700",
+              textDecoration: "none",
+              padding: "5px 18px",
+              border: "1px solid silver",
+              borderRadius: "5px",
+            }}
+          >
+            Go Back
+          </Link>
+        </div>
       </div>
     </div>
   );

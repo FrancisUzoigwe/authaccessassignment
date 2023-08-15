@@ -5,7 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        main: ["Nova Oval"]
+      },
+      transitionDuration: {
+        durate: ["transition-all 450ms"]
+      }
+      
+    },
   },
   plugins: [],
 }
