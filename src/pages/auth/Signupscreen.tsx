@@ -5,7 +5,7 @@ import home from "../../assets/home.jpg";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import {registerApi} from "../../apis/registerApi"
+import { signinApi } from "../../apis/SigninApi";
 const Signupscreen = () => {
 const navigate = useNavigate()
   const Schema = yup.object({
@@ -24,6 +24,7 @@ const navigate = useNavigate()
     resolver: yupResolver(Schema),
   });
 
+  
   const onSubmit = handleSubmit(async (data) => {
     const { name, email, password } = data;
     const formData = new FormData();
@@ -31,7 +32,7 @@ const navigate = useNavigate()
     formData.append("name", name);
     formData.append("password", password);
 
-    registerApi(formData).then(() => {
+    signinApi(formData).then(() => {
       navigate("/auth/signin")
     })
     reset()

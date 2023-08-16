@@ -8,7 +8,7 @@ interface iData {
 }
 
 
-export const registerApi = async (data: iData) => {
+export const registerApi = async (data: any) => {
    try {
     
     return await axios.post(`${url}/register`, data).then((res: any) => {
