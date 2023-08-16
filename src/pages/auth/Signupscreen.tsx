@@ -34,6 +34,7 @@ const navigate = useNavigate()
     registerApi(formData).then(() => {
       navigate("/auth/signin")
     })
+    reset()
   });
 
   return (

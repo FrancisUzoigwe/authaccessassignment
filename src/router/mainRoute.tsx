@@ -8,6 +8,7 @@ import Layout from "../components/common/Layout";
 import Homescreen from "../pages/screen/Homescreen";
 import Aboutscreen from "../pages/screen/Aboutscreen";
 import ErrorPage from "../error/Errorpage";
+import PrivateRoute from "./privateRoute";
 
 export const mainRoute = createBrowserRouter([
   {
@@ -35,7 +36,11 @@ export const mainRoute = createBrowserRouter([
     ],
   },
   {
-    element: <Layout />,
+    element: (
+      <PrivateRoute>
+        <Layout />
+      </PrivateRoute>
+    ),
     path: "/screen",
     children: [
       {
@@ -51,6 +56,6 @@ export const mainRoute = createBrowserRouter([
   },
   {
     path: "*",
-    element: <ErrorPage />
+    element: <ErrorPage />,
   },
 ]);

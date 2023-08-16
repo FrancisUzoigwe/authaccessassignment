@@ -8,22 +8,14 @@ interface iData {
 }
 
 
-export const registerApi = async (data: any) => {
+export const registerApi = async (data: iData) => {
    try {
+    
     return await axios.post(`${url}/register`, data).then((res: any) => {
         return res.data.data
     })
    } catch (error) {
-    console.log(error)
+    console.log("This is the error:",error)
    }
 }
 
-export const signin = async (data: iData) => {
-   try {
-    return await axios.post(`${url}/signin`, data).then((res: any) => {
-        return res.data.data
-    })
-   } catch (error) {
-    console.log(error)
-   }
-}
