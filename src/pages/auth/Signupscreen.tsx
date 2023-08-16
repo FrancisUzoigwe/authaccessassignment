@@ -1,13 +1,11 @@
-// import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import home from "../../assets/home.jpg";
-// import pix from "../../assets/man.webp";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { signinApi } from "../../apis/SigninApi";
+import { registerApi } from "../../apis/registerApi";
 const Signupscreen = () => {
-const navigate = useNavigate()
+  const navigate = useNavigate();
   const Schema = yup.object({
     name: yup.string().required(),
     email: yup.string().required(),
@@ -24,19 +22,15 @@ const navigate = useNavigate()
     resolver: yupResolver(Schema),
   });
 
-  
   const onSubmit = handleSubmit(async (data) => {
     const { name, email, password } = data;
-    const formData = new FormData();
-    formData.append("email", email);
-    formData.append("name", name);
-    formData.append("password", password);
-
-    signinApi(formData).then(() => {
-      navigate("/auth/signin")
-    })
-    reset()
+    registerApi({ name, email, password }).then((res) => {
+      navigate("/auth/signin");
+    });
+    reset();
   });
+
+  
 
   return (
     <div

@@ -8,7 +8,7 @@ import Layout from "../components/common/Layout";
 import Homescreen from "../pages/screen/Homescreen";
 import Aboutscreen from "../pages/screen/Aboutscreen";
 import ErrorPage from "../error/Errorpage";
-import PrivateRoute from "./privateRoute";
+import PrivateRoute from "./PrivateRoute";
 
 export const mainRoute = createBrowserRouter([
   {

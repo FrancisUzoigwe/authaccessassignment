@@ -10,11 +10,10 @@ import { user } from "../../global/GlobalState";
 const Signinscreen = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const Schema = yup.object({
-    name: yup.string().required(),
     email: yup.string().required(),
     password: yup.string().required(),
-    confirmPassword: yup.string().oneOf([yup.ref("password")]),
   });
 
   const {
@@ -28,8 +27,8 @@ const Signinscreen = () => {
 
   const onSubmit = handleSubmit(async (data) => {
     const { email, password } = data;
- 
 
+    console.log(data)
     signinApi({email, password}).then((res: any) => {
       dispatch(user(res));
       navigate("/screen/home");

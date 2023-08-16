@@ -16,7 +16,7 @@ const FirstHeader = () => {
   return (
 <div>
 {
-  scroll ? (<div className="flex items-center justify-center w-[100%] h-[50px] bg-gray-400 duration-durate fixed left-0 z-20">
+  scroll ? (<div className="flex items-center justify-center w-[100%] h-[50px] bg-gray-400 fixed left-0 z-20 duration-[450ms] ">
   <div className="flex items-center justify-between w-[93%] h-[40px] text-white">
     <div className="flex items-center">
       <div>
