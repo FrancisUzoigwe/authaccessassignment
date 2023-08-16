@@ -25,7 +25,7 @@ const Signupscreen = () => {
   const onSubmit = handleSubmit(async (data) => {
     const { name, email, password } = data;
     registerApi({ name, email, password }).then((res) => {
-     
+      console.log(res)
       navigate("/auth/signin");
     });
     reset();
