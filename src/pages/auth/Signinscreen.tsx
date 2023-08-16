@@ -6,6 +6,8 @@ import * as yup from "yup";
 import { signinApi } from "../../apis/SigninApi";
 import { useDispatch } from "react-redux";
 import { user } from "../../global/GlobalState";
+import Swal from "sweetalert2";
+import "animate.css";
 
 const Signinscreen = () => {
   const dispatch = useDispatch();
@@ -28,13 +30,22 @@ const Signinscreen = () => {
   const onSubmit = handleSubmit(async (data) => {
     const { email, password } = data;
 
-    console.log(data)
-    signinApi({email, password}).then((res: any) => {
+    console.log(data);
+    signinApi({ email, password }).then((res: any) => {
+      Swal.fire({
+        title: "Welcome back on the platform😊",
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      });
       dispatch(user(res));
       navigate("/screen/home");
-      console.log("Loading")
     });
-    reset()
+    reset();
   });
 
   return (
@@ -49,7 +60,7 @@ const Signinscreen = () => {
         <div className="mt-[20px] text-[30px] font-semibold text-white">
           Signin
         </div>
-       
+
         <div className="w-[400px] h-[40px] bg-white mt-[30px] rounded-[40px]">
           <input
             type="text"
@@ -76,7 +87,7 @@ const Signinscreen = () => {
             </div>
           )}
         </div>
-    
+
         <button
           type="submit"
           className="px-[15px] py-[5px] rounded-[5px] bg-black mt-3 text-white"
