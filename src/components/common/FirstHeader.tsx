@@ -40,7 +40,7 @@ const FirstHeader = () => {
       </Link>
     </div>
   </div>
-</div>): (<div className="flex items-center justify-center w-[100%] h-[50px] bg-white fixed left-0">
+</div>): (<div className="flex items-center justify-center w-[100%] h-[50px] bg-white fixed left-0 z-20">
       <div className="flex items-center justify-between w-[93%] h-[40px] transition-[all 350ms]">
         <div className="flex items-center">
           <div>
