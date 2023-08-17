@@ -66,7 +66,7 @@ const Signupscreen = () => {
             {...register("email")}
           />
           {errors.email?.message && (
-            <div className="text-red-600 text-[12px] flex justify-end">
+            <div className="text-white text-[12px] flex justify-end">
               invalid email address
             </div>
           )}
@@ -79,7 +79,7 @@ const Signupscreen = () => {
             {...register("password")}
           />
           {errors.password?.message && (
-            <div className="text-red-600 text-[12px] flex justify-end">
+            <div className="text-white text-[12px] flex justify-end">
               Passwords can only contain numbers
             </div>
           )}
@@ -92,7 +92,7 @@ const Signupscreen = () => {
             {...register("confirmPassword")}
           />
           {errors.confirmPassword?.message && (
-            <div className="text-red-600 text-[12px] flex justify-end">
+            <div className="text-white text-[12px] flex justify-end">
               Passwords must match!
             </div>
           )}
@@ -109,7 +109,7 @@ const Signupscreen = () => {
             Have an account already?{" "}
             <Link
               to="/auth/signin"
-              className="text-red-600 font-medium ml-[10px]"
+              className="text-white font-medium ml-[10px]"
             >
               Signin
             </Link>

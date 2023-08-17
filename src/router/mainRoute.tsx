@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import FirstLayout from "../components/common/FirstLayout";
 import LandingScreen from "../pages/auth/Landingscreen";
-import SignLayout from "../components/common/SignLayout";
 import Signinscreen from "../pages/auth/Signinscreen";
 import Signupscreen from "../pages/auth/Signupscreen";
 import Layout from "../components/common/Layout";
@@ -24,18 +23,12 @@ export const mainRoute = createBrowserRouter([
     ],
   },
   {
-    element: <SignLayout />,
-    path: "/auth",
-    children: [
-      {
-        path: "/auth/signin",
-        element: <Signinscreen />,
-      },
-      {
-        path: "/auth/signup",
-        element: <Signupscreen />,
-      },
-    ],
+    path: "/auth/signin",
+    element: <Signinscreen />,
+  },
+  {
+    path: "/auth/signup",
+    element: <Signupscreen />,
   },
   {
     element: (

@@ -69,7 +69,7 @@ const Signinscreen = () => {
             {...register("email")}
           />
           {errors.email?.message && (
-            <div className="text-red-600 text-[12px] flex justify-end">
+            <div className="text-white text-[12px] flex justify-end">
               invalid email address
             </div>
           )}
@@ -82,7 +82,7 @@ const Signinscreen = () => {
             {...register("password")}
           />
           {errors.password?.message && (
-            <div className="text-red-600 text-[12px] flex justify-end">
+            <div className="text-white text-[12px] flex justify-end">
               Passwords can only contain numbers
             </div>
           )}
@@ -90,11 +90,11 @@ const Signinscreen = () => {
 
         <button
           type="submit"
-          className="px-[15px] py-[5px] rounded-[5px] bg-black mt-3 text-white"
+          className="px-[15px] py-[5px] rounded-[5px] bg-black mt-5 text-white"
         >
           Signin
         </button>
-        <div className="mt-[20px]">
+        <div className="mt-[10px]">
           <div>
             Don't have an account?
             <Link
