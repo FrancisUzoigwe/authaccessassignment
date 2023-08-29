@@ -19,8 +19,8 @@ const Signinscreen = () => {
   });
 
   const {
+    
     register,
-    // reset,
     handleSubmit,
     formState: { errors },
   } = useForm({
@@ -28,39 +28,38 @@ const Signinscreen = () => {
   });
 
   const onSubmit = handleSubmit(async (data) => {
+    
+
     const { email, password } = data;
 
     console.log(data);
     signinApi({ email, password }).then((res: any) => {
-    if(res){
-      dispatch(user(res));
-      navigate("/screen/home");
-      Swal.fire({
-        title: "Welcome back on the platform😊",
-        showClass: {
-          popup: "animate__animated animate__fadeInDown",
-        },
-        
-        hideClass: {
-          popup: "animate__animated animate__fadeOutUp",
-        },
-      });
-    }else{
-      Swal.fire({
-        title: "Error occured while signing in",
-        showClass: {
-          popup: "animate__animated animate__fadeInDown",
-        },
-        icon:"error",
-        hideClass: {
-          popup: "animate__animated animate__fadeOutUp",
-        },
-      });
-      navigate("/auth/signin")
-    }
-   
+      if (res) {
+        dispatch(user(res));
+        navigate("/screen/home");
+        Swal.fire({
+          title: "Welcome back on the platform😊",
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
+      } else {
+        Swal.fire({
+          title: "Error occured while signing in",
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          icon: "error",
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
+        });
+        navigate("/auth/signin");
+      }
     });
-    // reset();
   });
 
   return (
